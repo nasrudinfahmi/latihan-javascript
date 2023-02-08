@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let lagi = true;
+      while (lagi) {
+        // menangkap pilihan player
+
+        const player = prompt(
+          "masukkan pilihan anda:\ncth: gajah, orang, semut"
+        );
+
+        // menangkap pilihan komputer
+
+        let komputer = Math.floor(Math.random() * 9 + 1);
+
+        if (komputer <= 4) {
+          komputer = "gajah";
+        }
+        if (komputer > 4 && komputer <= 6) {
+          komputer = "orang";
+        }
+        if (komputer > 6) {
+          komputer = "semut";
+        }
+
+        // menentukan aturan
+
+        let hasil = "anda ";
+        if (player === komputer) {
+          hasil = "seri";
+        } else if (player == "gajah") {
+          if (komputer == "orang") {
+            hasil += "menang";
+          } else {
+            hasil += "kalah";
+          }
+        } else if (player == "orang") {
+          if (komputer == "semut") {
+            hasil += "menang";
+          } else {
+            hasil += "kalah";
+          }
+        } else if (player == "semut") {
+          if (komputer == "gajah") {
+            hasil += "menang";
+          } else {
+            hasil += "kalah";
+          }
+        } else {
+          hasil = `anda memasukkan inputan yang salah!`;
+        }
+
+        alert(
+          `pilihan anda: ${player} \npilihan komputer: ${komputer} \n${player} vs ${komputer} \nhasil: ${hasil}`
+        );
+
+        lagi = confirm("mau main lagi?");
+      }
+    </script>
+  </body>
+</html>

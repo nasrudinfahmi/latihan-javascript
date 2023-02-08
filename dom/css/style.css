@@ -1,0 +1,82 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(204, 204, 204);
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 3rem 7%;
+}
+
+.container .card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 22%;
+  background-color: #f5f5f5;
+  border: 1px solid #adadad;
+  border-radius: 50px;
+  box-shadow: 3px 3px 0.5rem rgba(3, 3, 3, 0.1);
+}
+
+.container .card .photo-profile{
+  object-fit: cover;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.container .card .profile{
+  width: 55%;
+  padding: 5px 5%;
+}
+
+.container .card .profile .name{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.container .card .profile .number-phone{
+  font-weight: 100;
+  font-size: 0.8rem;
+  color: rgb(78, 78, 78);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.container .card span.btn-x{
+  width: 3.4rem;
+  height: 3.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: #b6b6b6;
+  right: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  transition: 0.15s all linear;
+}
+
+.container .card span.btn-x:hover{
+  background-color: #dbdbdb8a;
+  color: red;
+}

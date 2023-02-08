@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="reload()">klik untuk bermain</button>
+    <script>
+      let kesempatan = 3;
+      let angka = Math.floor(Math.random() * 10 + 1);
+      console.log(angka);
+
+      while (kesempatan >= 1) {
+        const jwb = prompt(
+          `tebak angka 1 - 10 \nanda memiliki ${kesempatan} kesempatan.`
+        );
+        if (jwb == angka) {
+          alert("benar! \nangka yang dimaksud adalah " + angka);
+          kesempatan = 0;
+        }
+        if (jwb < angka) {
+          alert(`angka yang anda masukkan TERLALU KECIL!`);
+        } else if (jwb > angka) {
+          alert(`angka yang anda masukkan TERLALU BESAR!`);
+        }
+        kesempatan--;
+        if (kesempatan == 0) {
+          alert("kesempatan habis. \nangka yang benar adalah " + angka);
+        }
+      }
+
+      function reload(){
+        document.location.reload()
+      }
+    </script>
+  </body>
+</html>
