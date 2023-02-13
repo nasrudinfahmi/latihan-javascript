@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. object literal
+      const siswa1 = {
+        nama: "fahmi",
+        asal: "sidoarjo",
+        energi: 10,
+        makan: function (porsi) {
+          return (this.energi += porsi);
+        },
+      };
+
+
+      // 2. function declaration
+      function Mahasiswa(nama, asal, energi) {
+        let mahasiswa = {};
+        mahasiswa.nama = nama;
+        mahasiswa.asal = asal;
+        mahasiswa.energi = energi;
+
+        mahasiswa.makan = function (porsi) {
+          this.energi += porsi;
+          return `selamat makan ${this.nama}`;
+        };
+
+        mahasiswa.tidur = function (jam) {
+          this.energi += jam * 2;
+          return `selamat tidur ${this.nama}`;
+        };
+        return mahasiswa;
+      }
+
+      let mahasiswa1 = Mahasiswa("nasrudin", "surabaya", 10);
+
+
+      // 3. constructor function
+      function Siswa(nama, asal, energi) {
+        this.nama = nama;
+        this.asal = asal;
+        this.energi = energi;
+
+        this.makan = function (porsi) {
+          this.energi += porsi;
+          return `selamat makan ${this.nama}`;
+        };
+
+        this.tidur = function (jam) {
+          this.energi += jam * 2;
+          return `selamat tidur ${this.nama}`;
+        };
+      }
+
+      let siswa2 = new Siswa("muhammad", "sidoarjo", 10);
+
+
+      // 4. object.create()
+
+      const methodGuru = {
+        makan: function (porsi) {
+          this.energi += porsi;
+          return `selamat makan ${this.nama}`;
+        },
+
+        tidur: function (jam) {
+          this.energi += jam * 2;
+          return `selamat tidur ${this.nama}`;
+        },
+      };
+
+      function Guru(nama, asal, energi) {
+        let guru = Object.create(methodGuru);
+        guru.nama = nama;
+        guru.asal = asal;
+        guru.energi = energi;
+        return guru;
+      }
+
+      let guru1 = Guru("kundaru", "krian", 10);
+
+
+      // prototype
+
+      function Murid(nama, kelas, energi) {
+        this.nama = nama;
+        this.kelas = kelas;
+        this.energi = energi;
+      }
+
+      Murid.prototype.makan = function (porsi) {
+        this.energi += porsi;
+        return `selamat makan ${this.nama}`;
+      };
+
+      Murid.prototype.tidur = function (jam) {
+        this.energi += jam;
+        return `selamat tidur ${this.nama}`;
+      };
+
+      let murid1 = new Murid("ale", 10, 20);
+
+
+      // versi class
+      // konsep class sama dengan prototype
+
+      class Profesi {
+        constructor(nama, profesi, energi) {
+          this.nama = nama;
+          this.profesi = profesi;
+          this.energi = energi;
+        }
+
+        makan(porsi) {
+          this.energi += porsi;
+          return `selamat makan ${this.nama}.`;
+        }
+
+        tidur(jam) {
+          this.energi += jam * 2;
+          return `selamat tidur ${this.nama}`;
+        }
+      }
+
+      let jokowi = new Profesi('jokowi', 'presiden', 100)
+    </script>
+  </body>
+</html>
