@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const angka = [-1, 0, 5, -5, 3, 2, 8, 9, -2, 7, 4, 1];
+
+      // const newAngka = [];
+      // for (let i = 0; i < angka.length; i++) {
+      //   if (angka[i] <= 3) {
+      //     newAngka.push(angka[i]);
+      //   }
+      // }
+      // console.log(newAngka);
+
+
+      // ----- filter -----
+      // const newAngka = angka.filter((a) => a <= 3);
+      // console.log(newAngka);
+
+
+      // ----- map -----
+      // const newAngka = angka.map((a) => a + 2)
+      //   console.log(newAngka)
+
+
+      // ----- reduce -----
+      // const newAngka = angka.reduce((acc, curr) => acc+curr)
+      // console.log(newAngka)
+
+
+      // ----- method chaining -----
+      //  - cari angka <= 3
+      //  - tambahkan 2
+      //  - lalu jumlahkan
+      const newAngka = angka
+        .filter((a) => a <= 3) // [-1,0,-5,3,-2,1]
+        .map((a) => a + 2) // [1,2,-3,5,4,0,3]
+        .reduce((acc, curr) => acc + curr); // 12
+
+      console.log(newAngka);
+    </script>
+  </body>
+</html>
