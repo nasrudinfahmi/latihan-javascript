@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ------- destructuring array -------
+
+      // const mhs = ["muhammad", "nasrudin", "fahmi"];
+      // const [satu, dua, tiga] = mhs;
+      // console.log(satu);
+
+      // const siswa = ["abi", "ali", "ani", "andi", "santi"];
+      // const [ketua, ...anggota] = siswa;
+      // console.log(siswa)
+      // console.log(ketua)
+      // console.log(...siswa)
+
+      // ------- destructuring object -------
+
+      // const orang = {
+      //   nama: "nasrudin fahmi",
+      //   id: 123,
+      //   alamat: "sidoarjo",
+      // };
+
+      // const { nama, id, alamat } = orang;
+      // console.log(nama)
+
+      // -----
+      // assignment tanpa declarasi object
+
+      // ({ nama, id, alamat } = { nama: "nasrudin fahmi", id: 123, alamat: "sidoarjo",});
+      // console.log(nama)
+
+      // -----
+      // mengambil field pada object, setelah dikirim sebagai paramater untuk function
+      // const movie = {
+      //   judul: "spongebob squarepants",
+      //   sutradara: "budi",
+      //   actors: ["spongebob", "patrick", "krabs", "squidward"],
+      //   id: 12345,
+      // };
+
+      // function getIdMovie({ id }) {
+      //   return id;
+      // }
+      // console.log(getIdMovie(movie));
+
+      // ------- destructuring function -------
+      // function kalkulasi(a, b) {
+      //   return [a + b, a - b, a * b, a / b];
+      // }
+
+      // const [tambah, kurang, kali, bagi] = kalkulasi(3, 2);
+      // console.log(tambah);
+
+      // function kalkulasi(a, b) {
+      //   return {
+      //     tambah: a + b,
+      //     kurang: a - b,
+      //     kali: a * b,
+      //     bagi: a / b,
+      //   };
+      // }
+
+      // const { kurang, kali, tambah, bagi } = kalkulasi(3, 2);
+      // console.log(bagi)
+
+      // ------
+      // destructuring function bersarang pada argument
+      const siswa = {
+        nama: "budi",
+        semester: 8,
+        jurusan: "teknik informatika",
+        nilai: {
+          tugas: 85,
+          uts: 90,
+          uas: 90
+        },
+      };
+
+      function cetakSiswa( { nama, semester, nilai:{tugas, uts, uas}} ){
+        return `saya ${nama}, saya semester ${semester}, nilai saya: \ntugas: ${tugas} \nuts: ${uts} \nuas: ${uas}`
+      }
+
+      console.log(cetakSiswa(siswa))
+    </script>
+  </body>
+</html>

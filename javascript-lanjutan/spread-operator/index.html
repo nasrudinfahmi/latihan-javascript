@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: antiquewhite;
+      }
+      h1 {
+        color: brown;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 4rem;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        user-select: none;
+      }
+      h1 span {
+        display: inline-block;
+        transition: 0.25s linear;
+        opacity: 0.5;
+        cursor: default;
+      }
+      h1 span:hover {
+        color: black;
+        opacity: 1;
+        transform: scale(1.2);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>javascript</li>
+      <li>reactjs</li>
+      <li>angular</li>
+      <li>vue</li>
+    </ul>
+    <h1>nasrudin fahmi</h1>
+
+    <script>
+      // ------- spread operator -------
+
+      const li = document.querySelectorAll("li");
+      const nama = document.querySelector("h1");
+
+      const pemograman = [...li].map((p) => p.innerHTML);
+      console.log(pemograman);
+
+      // -----
+
+      const huruf = [...nama.textContent]
+        .map((n) => `<span>${n}</span>`)
+        .join("");
+      nama.innerHTML = huruf;
+
+      // ------- rest parameter -------
+
+      function kalkulasi(...value) {
+        return value.reduce((a, b) => a + b);
+      }
+      console.log(kalkulasi(1, 2, 3, 4, 5));
+
+      // -----
+      // array destructuring
+      const kelompok1 = ["budi", "andi", "jamal", "tono", "sugik"];
+      const [ketua, wakil, ...anggota] = kelompok1;
+      console.log(anggota);
+
+      // -----
+      // object destructuring
+      const team = {
+        pm: "shikaku nara",
+        frontEnd1: "hashirama senju",
+        frontEnd2: "tobirama senju",
+        backEnd1: "shikamaru nara",
+        backEnd2: "kakashi hatake",
+        ux: "sai",
+        devOps: "orochimaru",
+      };
+
+      const { pm, ...myTeam } = team;
+      console.log(myTeam);
+
+      // -----
+      function filterBy(type, ...values) {
+        return values.filter((v) => typeof v === type);
+      }
+      console.log(
+        filterBy("boolean", 1, 2, 3, false, "sasuke", 4, true, "naruto")
+      );
+    </script>
+  </body>
+</html>
